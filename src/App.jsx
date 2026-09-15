@@ -12,8 +12,8 @@ import NewProjectModal from './components/NewProjectModal';
 import { defaultProjects } from './data/projects';
 import { Plus, Check, Lock, Unlock, ShieldAlert } from 'lucide-react';
 
-const STORAGE_KEY = 'jiwon_portfolio_projects_v2';
-const ADMIN_STORAGE_KEY = 'jiwon_portfolio_admin_v2';
+const STORAGE_KEY = 'jiwon_portfolio_projects_v3';
+const ADMIN_STORAGE_KEY = 'jiwon_portfolio_admin_v3';
 
 export default function App() {
   const [projectsList, setProjectsList] = useState(() => {

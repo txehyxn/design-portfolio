@@ -50,41 +50,55 @@ export default function ProjectModal({ project, onClose, isAdmin, onDelete }) {
       {/* Modal Dialog */}
       <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden z-10 max-h-[90vh] flex flex-col animate-fade-up">
         {/* Header Visual Banner */}
-        <div className={`relative bg-gradient-to-br ${project.themeColor || 'from-stone-800 to-stone-900'} p-6 sm:p-7 text-white shrink-0 overflow-hidden`}>
-          {/* Subtle grid */}
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]" />
+        <div className={`relative min-h-[180px] sm:min-h-[220px] bg-gradient-to-br ${project.themeColor || 'from-stone-800 to-stone-900'} p-6 sm:p-7 text-white shrink-0 overflow-hidden flex flex-col justify-between`}>
+          {/* Real Thumbnail Background */}
+          {project.thumbnail ? (
+            <>
+              <img
+                src={project.thumbnail}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/40 to-stone-950/50" />
+            </>
+          ) : (
+            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]" />
+          )}
 
           {/* Close & Delete Button */}
-          <div className="absolute top-4 right-4 flex items-center gap-2">
-            {isAdmin && (
+          <div className="relative z-10 flex items-center justify-between gap-2">
+            <span className="inline-block px-2.5 py-1 rounded-md bg-stone-900/70 backdrop-blur-md text-white text-xs font-medium border border-white/10">
+              {project.category}
+            </span>
+
+            <div className="flex items-center gap-2">
+              {isAdmin && (
+                <button
+                  onClick={handleDelete}
+                  className="p-2 rounded-full bg-stone-900/70 hover:bg-red-600 text-white transition-colors border border-white/10"
+                  title="프로젝트 삭제"
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              )}
               <button
-                onClick={handleDelete}
-                className="p-2 rounded-full bg-black/20 hover:bg-red-600 text-white transition-colors"
-                title="프로젝트 삭제"
+                onClick={onClose}
+                className="p-2 rounded-full bg-stone-900/70 hover:bg-stone-800 text-white transition-colors focus:outline-none border border-white/10"
+                aria-label="닫기"
               >
-                <Trash2 className="w-4 h-4" />
+                <X className="w-4 h-4" />
               </button>
-            )}
-            <button
-              onClick={onClose}
-              className="p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors focus:outline-none"
-              aria-label="닫기"
-            >
-              <X className="w-4 h-4" />
-            </button>
+            </div>
           </div>
 
-          {/* Category Badge */}
-          <div className="inline-block px-2.5 py-0.5 rounded-md bg-white/20 text-white text-xs font-medium mb-2.5">
-            {project.category}
+          <div className="relative z-10 mt-auto pt-4">
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-1.5 drop-shadow-xs">
+              {project.title}
+            </h2>
+            <p className="text-stone-200 text-xs sm:text-sm font-medium drop-shadow-xs">
+              {project.subtitle || project.summary}
+            </p>
           </div>
-
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-1.5">
-            {project.title}
-          </h2>
-          <p className="text-white/80 text-xs sm:text-sm font-medium">
-            {project.subtitle || project.summary}
-          </p>
         </div>
 
         {/* Modal Body */}

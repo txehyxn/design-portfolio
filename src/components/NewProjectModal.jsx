@@ -21,6 +21,7 @@ export default function NewProjectModal({ isOpen, onClose, onAdd }) {
   const [themeColor, setThemeColor] = useState(THEME_PRESETS[0].value);
   const [figmaLink, setFigmaLink] = useState('');
   const [liveLink, setLiveLink] = useState('');
+  const [thumbnail, setThumbnail] = useState('');
   const [tags, setTags] = useState('UI/UX, Responsive');
 
   if (!isOpen) return null;
@@ -39,6 +40,7 @@ export default function NewProjectModal({ isOpen, onClose, onAdd }) {
       category,
       summary: summary.trim(),
       description: description.trim() || summary.trim(),
+      thumbnail: thumbnail.trim(),
       period: period.trim() || '2026.01 - 현재',
       contribution: contribution.trim() || '기여도 100%',
       role: 'UI/UX Design',
@@ -230,8 +232,22 @@ export default function NewProjectModal({ isOpen, onClose, onAdd }) {
             </div>
           </div>
 
+          {/* Thumbnail Image URL */}
+          <div>
+            <label className="block text-xs font-semibold text-stone-700 mb-1">
+              썸네일 이미지 URL (Unsplash 등 이미지 주소)
+            </label>
+            <input
+              type="url"
+              value={thumbnail}
+              onChange={(e) => setThumbnail(e.target.value)}
+              placeholder="https://images.unsplash.com/... (미입력 시 테마 색상 적용)"
+              className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-terracotta-500 focus:bg-white transition-all text-stone-900"
+            />
+          </div>
+
           {/* Links */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
             <div>
               <label className="block text-xs font-semibold text-stone-700 mb-1">
                 Figma 링크 URL

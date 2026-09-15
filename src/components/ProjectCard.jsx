@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Trash2, ExternalLink, Layers, Smartphone, Layout, Monitor } from 'lucide-react';
+import { ArrowUpRight, Trash2, ExternalLink, Smartphone, Layout, Monitor } from 'lucide-react';
 
 export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
   const getCategoryIcon = (category) => {
@@ -26,13 +26,26 @@ export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
       className="group relative bg-white rounded-2xl border border-stone-200/90 hover:border-stone-400 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden cursor-pointer hover:-translate-y-1"
     >
       {/* Visual Thumbnail Header */}
-      <div className={`relative h-44 bg-gradient-to-br ${project.themeColor || 'from-stone-800 to-stone-900'} p-4 flex flex-col justify-between overflow-hidden`}>
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]" />
+      <div className={`relative h-48 sm:h-52 bg-gradient-to-br ${project.themeColor || 'from-stone-800 to-stone-900'} p-4 flex flex-col justify-between overflow-hidden`}>
+        {/* Real Thumbnail Photo if available */}
+        {project.thumbnail ? (
+          <>
+            <img
+              src={project.thumbnail}
+              alt={project.title}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+              loading="lazy"
+            />
+            {/* Gradient Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-900/30 to-stone-950/40" />
+          </>
+        ) : (
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]" />
+        )}
 
         {/* Top Badges & Admin Delete */}
         <div className="relative z-10 flex items-center justify-between gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-900/60 backdrop-blur-md text-white text-[11px] font-medium">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-900/70 backdrop-blur-md text-white text-[11px] font-medium border border-white/10 shadow-xs">
             {getCategoryIcon(project.category)}
             {project.category}
           </span>
@@ -40,7 +53,7 @@ export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
           {isAdmin && (
             <button
               onClick={handleDelete}
-              className="p-1.5 rounded-lg bg-stone-900/70 hover:bg-red-600 text-white transition-colors"
+              className="p-1.5 rounded-lg bg-stone-900/80 hover:bg-red-600 text-white transition-colors border border-white/10"
               title="프로젝트 삭제 (Admin)"
               aria-label="Delete project"
             >
@@ -51,10 +64,10 @@ export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
 
         {/* Thumbnail Title Graphic Preview */}
         <div className="relative z-10 mt-auto">
-          <div className="text-white/80 text-[11px] font-medium tracking-wide">
+          <div className="text-stone-300 text-[11px] font-medium tracking-wide">
             {project.period || '2025 - 2026'}
           </div>
-          <div className="text-white text-sm font-bold truncate">
+          <div className="text-white text-sm font-bold truncate drop-shadow-xs">
             {project.subtitle || project.title}
           </div>
         </div>
@@ -80,7 +93,7 @@ export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
 
           {/* Tools & Tags */}
           <div className="flex flex-wrap gap-1.5 mb-4">
-            {project.tools?.slice(0, 3).map((tool, idx) => (
+            {project.tools?.map((tool, idx) => (
               <span
                 key={idx}
                 className="px-2 py-0.5 rounded-md bg-stone-100 text-stone-700 text-[11px] font-medium"
