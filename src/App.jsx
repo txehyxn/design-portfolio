@@ -12,8 +12,8 @@ import NewProjectModal from './components/NewProjectModal';
 import { defaultProjects } from './data/projects';
 import { Plus, Check, Lock, Unlock, ShieldAlert } from 'lucide-react';
 
-const STORAGE_KEY = 'jiwon_portfolio_projects_v4';
-const ADMIN_STORAGE_KEY = 'jiwon_portfolio_admin_v4';
+const STORAGE_KEY = 'jiwon_portfolio_projects_v5';
+const ADMIN_STORAGE_KEY = 'jiwon_portfolio_admin_v5';
 
 export default function App() {
   const [projectsList, setProjectsList] = useState(() => {
@@ -94,9 +94,9 @@ export default function App() {
   // Category Counts
   const categoryCounts = useMemo(() => {
     const counts = {
-      '웹 서비스': 0,
-      '랜딩페이지': 0,
-      '모바일 UI': 0,
+      '브로슈어/카탈로그': 0,
+      '웹 포스터/템플릿': 0,
+      '웹 서비스/랜딩페이지': 0,
     };
     projectsList.forEach((p) => {
       if (counts[p.category] !== undefined) {

@@ -1,12 +1,12 @@
-export const categories = ['전체', '웹 서비스', '랜딩페이지', '모바일 UI'];
+export const categories = ['전체', '브로슈어/카탈로그', '웹 포스터/템플릿', '웹 서비스/랜딩페이지'];
 
 export const designerProfile = {
   name: '정지원',
   englishName: 'Jiwon Jung',
-  title: 'Web & UI/UX Designer',
+  title: 'Web & VIP Travel Content Designer',
   email: 'jiwon.design.pro@gmail.com',
   location: 'Seoul, Korea',
-  bio: '사용자의 행동을 관찰하고 명확한 구조를 설계합니다. 불필요한 장식을 덜어내고 본질에 집중하는 웹 & UI/UX 디자이너 정지원입니다.',
+  bio: 'VIP 여행센터의 품격을 높이는 브로슈어, 웹 포스터, 컨시어지 디지털 플랫폼을 기획 및 디자인합니다. 감성적인 비주얼과 정갈한 타이포그래피로 브랜드 가치를 전달합니다.',
   socials: {
     github: 'https://github.com',
     behance: 'https://behance.net',
@@ -17,69 +17,69 @@ export const designerProfile = {
 
 export const defaultProjects = [
   {
-    id: 'ordinary-house',
-    title: '오디너리 하우스 (Ordinary House)',
-    subtitle: '라이프스타일 리빙 브랜드 쇼핑몰 리뉴얼',
-    category: '웹 서비스',
-    thumbnail: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80',
+    id: 'vip-luxury-brochure',
+    title: 'VIP 럭셔리 크루즈 & 리조트 브로슈어',
+    subtitle: '프리미엄 하이엔드 고객을 위한 인쇄/디지털 럭셔리 카탈로그',
+    category: '브로슈어/카탈로그',
+    thumbnail: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
     images: [
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80'
     ],
-    summary: '여백과 따뜻한 텍스처를 살린 라이프스타일 리빙 브랜드 쇼핑몰 리뉴얼',
-    description: '브랜드 감성을 극대화하기 위해 크림/샌드 톤 베이스 그리드를 구축하고, 복잡했던 주문 결제 플로우를 간소화하여 구매 전환 경험을 개선한 반응형 웹 디자인 프로젝트입니다.',
-    period: '2025.10 - 2026.01',
-    contribution: 'UI/UX 디자인 100%',
-    role: 'UI/UX Design',
-    tools: ['Figma', 'Photoshop'],
-    themeColor: 'from-stone-800 to-stone-900',
-    tags: ['E-Commerce', 'Living Brand', 'Responsive Web'],
-    figmaLink: 'https://figma.com/@jiwon_ordinary',
-    liveLink: 'https://portfolio-jiwon.vercel.app'
-  },
-  {
-    id: 'stay-forest',
-    title: '스테이 포레스트 (Stay Forest)',
-    subtitle: '자연 속 프라이빗 감성 스테이 예약 플랫폼',
-    category: '랜딩페이지',
-    thumbnail: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80'
-    ],
-    summary: '자연 속 프라이빗 감성 스테이를 소개하는 몰입형 예약 랜딩페이지',
-    description: '공간의 채광과 분위기를 시각적으로 전달할 수 있도록 와이드 비주얼 레이아웃과 감성적인 타이포그래피를 적용했습니다. 스크롤 인터랙션을 고려해 설계되었습니다.',
-    period: '2025.07 - 2025.09',
-    contribution: '기여도: 기획 50%, UI 디자인 100%',
-    role: 'Concept & UI Design',
-    tools: ['Figma', 'Illustrator'],
+    summary: '골드 앤 샌드 톤의 절제된 타이포그래피와 하이엔드 여백을 살린 24p 프리미엄 여행 카탈로그',
+    description: 'VIP 고객의 여행 품격을 높이기 위해 고급스러운 웜베이지 & 골드 컬러 팔레트와 정갈한 타이포그래피를 적용한 브랜드 브로슈어 디자인입니다. 지류 인쇄 사양(박 가공, 특수지)과 모바일 디지털 카탈로그(PDF) 뷰어를 모두 고려하여 가독성과 심미성을 극대화했습니다.',
+    period: '2025.11 - 2026.01',
+    contribution: '기획 40%, 에디토리얼 디자인 100%',
+    role: 'Editorial & Print Design, Typography',
+    tools: ['InDesign', 'Photoshop', 'Illustrator', 'Figma'],
     themeColor: 'from-amber-800 to-stone-900',
-    tags: ['Stay Landing', 'Visual Storytelling', 'Booking UI'],
-    figmaLink: 'https://figma.com/@jiwon_stayforest',
+    tags: ['VIP Brochure', 'Editorial Design', 'Luxury Catalog', 'Print & Digital'],
+    figmaLink: 'https://figma.com/@jiwon_vipbrochure',
     liveLink: 'https://portfolio-jiwon.vercel.app'
   },
   {
-    id: 'mind-routine',
-    title: '마인드루틴 (Mind Routine)',
-    subtitle: '마음 챙김과 데일리 습관 형성 모바일 앱',
-    category: '모바일 UI',
-    thumbnail: 'https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1200&q=80',
+    id: 'swiss-alps-poster-kit',
+    title: '스위스 알프스 프라이빗 투어 웹 포스터 & 템플릿',
+    subtitle: 'SNS 홍보 및 온·오프라인 VIP 패키지 프로모션 그래픽 템플릿 세트',
+    category: '웹 포스터/템플릿',
+    thumbnail: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80',
     images: [
-      'https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80'
     ],
-    summary: '시각적 피로도를 덜어주는 데일리 습관 형성 및 기록 모바일 앱',
-    description: '사용자가 매일 편안하게 기록할 수 있도록 카드형 인터페이스와 직관적인 인터랙션을 디자인했으며 일관된 컴포넌트 시스템을 구축했습니다.',
-    period: '2025.03 - 2025.06',
-    contribution: 'UI 디자인 100%',
-    role: 'Mobile UI Design',
-    tools: ['Figma'],
+    summary: '알프스 설경과 파노라마 뷰를 담아낸 감성 웹 포스터 및 인스타그램·뉴스레터 템플릿 키트',
+    description: 'VIP 맞춤 프라이빗 알프스 기차 여행 및 럭셔리 샬레 상품의 독보적인 분위기를 전달하기 위해 시선을 사로잡는 대담한 비주얼과 모듈형 템플릿 시스템을 설계했습니다. 마케팅팀이 즉시 활용할 수 있도록 다양한 비율(1:1, 9:16, 4:5)의 카드뉴스 및 포스터 에셋을 제작했습니다.',
+    period: '2025.08 - 2025.10',
+    contribution: '비주얼 그래픽 디자인 100%',
+    role: 'Visual Design, Poster & Social Kit',
+    tools: ['Photoshop', 'Illustrator', 'Figma'],
+    themeColor: 'from-stone-700 to-amber-900',
+    tags: ['Web Poster', 'Social Template', 'Visual Branding', 'Marketing Kit'],
+    figmaLink: 'https://figma.com/@jiwon_alpsposter',
+    liveLink: 'https://portfolio-jiwon.vercel.app'
+  },
+  {
+    id: 'vip-travel-concierge-web',
+    title: 'VIP 여행 컨시어지 큐레이션 웹 & 랜딩',
+    subtitle: '맞춤형 프라이빗 여행 일정 설계 및 1:1 전담 컨시어지 예약 플랫폼',
+    category: '웹 서비스/랜딩페이지',
+    thumbnail: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'
+    ],
+    summary: '엄선된 프리미엄 여행지 큐레이션과 원스톱 전담 컨시어지 상담 신청 반응형 웹 서비스',
+    description: 'VIP 고객들이 복잡한 검색 없이 취향(프라이빗 빌라, 미식 투어, 요트 투어 등)에 맞는 맞춤 여정을 추천받고 전담 여행 플래너와 즉각 소통할 수 있는 인터랙티브 웹 플랫폼입니다. 직관적인 인터페이스와 우아한 마이크로 모션으로 브랜드 신뢰도를 극대화했습니다.',
+    period: '2025.04 - 2025.07',
+    contribution: 'UI/UX 디자인 100%, 반응형 설계',
+    role: 'UI/UX Design, Interaction, Prototyping',
+    tools: ['Figma', 'Tailwind CSS', 'ProtoPie'],
     themeColor: 'from-terracotta-700 to-stone-900',
-    tags: ['Mobile App', 'Habit Routine', 'Component System'],
-    figmaLink: 'https://figma.com/@jiwon_mindroutine',
+    tags: ['Concierge Web', 'VIP Travel', 'Responsive Landing', 'UI/UX'],
+    figmaLink: 'https://figma.com/@jiwon_travelconcierge',
     liveLink: 'https://portfolio-jiwon.vercel.app'
   }
 ];

@@ -1,15 +1,16 @@
-import React from 'react';
-import { ArrowUpRight, Trash2, Smartphone, Layout, Monitor, Images } from 'lucide-react';
+import { ArrowUpRight, Trash2, BookOpen, Layout, Globe, Images, Sparkles } from 'lucide-react';
 
 export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
   const getCategoryIcon = (category) => {
     switch (category) {
-      case '모바일 UI':
-        return <Smartphone className="w-3 h-3" />;
-      case '랜딩페이지':
+      case '브로슈어/카탈로그':
+        return <BookOpen className="w-3 h-3" />;
+      case '웹 포스터/템플릿':
         return <Layout className="w-3 h-3" />;
+      case '웹 서비스/랜딩페이지':
+        return <Globe className="w-3 h-3" />;
       default:
-        return <Monitor className="w-3 h-3" />;
+        return <Sparkles className="w-3 h-3" />;
     }
   };
 

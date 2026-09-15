@@ -25,7 +25,7 @@ const THEME_PRESETS = [
 export default function NewProjectModal({ isOpen, onClose, onAdd }) {
   const [title, setTitle] = useState('');
   const [subtitle, setSubtitle] = useState('');
-  const [category, setCategory] = useState('웹 서비스');
+  const [category, setCategory] = useState('브로슈어/카탈로그');
   const [summary, setSummary] = useState('');
   const [description, setDescription] = useState('');
   const [contribution, setContribution] = useState('기여도 100%');
@@ -176,9 +176,9 @@ export default function NewProjectModal({ isOpen, onClose, onAdd }) {
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-terracotta-500 focus:bg-white transition-all text-stone-900"
               >
-                <option value="웹 서비스">웹 서비스</option>
-                <option value="랜딩페이지">랜딩페이지</option>
-                <option value="모바일 UI">모바일 UI</option>
+                <option value="브로슈어/카탈로그">브로슈어/카탈로그</option>
+                <option value="웹 포스터/템플릿">웹 포스터/템플릿</option>
+                <option value="웹 서비스/랜딩페이지">웹 서비스/랜딩페이지</option>
               </select>
             </div>
           </div>
