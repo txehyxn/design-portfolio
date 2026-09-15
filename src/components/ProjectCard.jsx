@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Trash2, ExternalLink, Smartphone, Layout, Monitor } from 'lucide-react';
+import { ArrowUpRight, Trash2, Smartphone, Layout, Monitor, Images } from 'lucide-react';
 
 export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
   const getCategoryIcon = (category) => {
@@ -20,24 +20,27 @@ export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
     }
   };
 
+  const coverImage = project.thumbnail || (project.images && project.images[0]);
+  const imageCount = project.images ? project.images.length : (project.thumbnail ? 1 : 0);
+
   return (
     <div
       onClick={onClick}
       className="group relative bg-white rounded-2xl border border-stone-200/90 hover:border-stone-400 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden cursor-pointer hover:-translate-y-1"
     >
-      {/* Visual Thumbnail Header */}
-      <div className={`relative h-48 sm:h-52 bg-gradient-to-br ${project.themeColor || 'from-stone-800 to-stone-900'} p-4 flex flex-col justify-between overflow-hidden`}>
-        {/* Real Thumbnail Photo if available */}
-        {project.thumbnail ? (
+      {/* Full Cover Thumbnail Header */}
+      <div className={`relative h-52 sm:h-56 bg-gradient-to-br ${project.themeColor || 'from-stone-800 to-stone-900'} p-4 flex flex-col justify-between overflow-hidden`}>
+        {/* Representative Thumbnail Image */}
+        {coverImage ? (
           <>
             <img
-              src={project.thumbnail}
+              src={coverImage}
               alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
               loading="lazy"
             />
-            {/* Gradient Overlay for Text Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-900/30 to-stone-950/40" />
+            {/* Elegant dark-warm gradient overlay for badge and text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/25 to-stone-950/40" />
           </>
         ) : (
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]" />
@@ -45,21 +48,32 @@ export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
 
         {/* Top Badges & Admin Delete */}
         <div className="relative z-10 flex items-center justify-between gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-900/70 backdrop-blur-md text-white text-[11px] font-medium border border-white/10 shadow-xs">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-900/75 backdrop-blur-md text-white text-[11px] font-medium border border-white/10 shadow-xs">
             {getCategoryIcon(project.category)}
             {project.category}
           </span>
 
-          {isAdmin && (
-            <button
-              onClick={handleDelete}
-              className="p-1.5 rounded-lg bg-stone-900/80 hover:bg-red-600 text-white transition-colors border border-white/10"
-              title="프로젝트 삭제 (Admin)"
-              aria-label="Delete project"
-            >
-              <Trash2 className="w-3.5 h-3.5" />
-            </button>
-          )}
+          <div className="flex items-center gap-1.5">
+            {/* Multi-image Count Indicator */}
+            {imageCount > 1 && (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-stone-900/70 backdrop-blur-md text-white text-[10px] font-semibold border border-white/10">
+                <Images className="w-3 h-3" />
+                <span>{imageCount}</span>
+              </span>
+            )}
+
+            {/* Admin Delete Action */}
+            {isAdmin && (
+              <button
+                onClick={handleDelete}
+                className="p-1.5 rounded-lg bg-stone-900/80 hover:bg-red-600 text-white transition-colors border border-white/10"
+                title="프로젝트 삭제 (Admin)"
+                aria-label="Delete project"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Thumbnail Title Graphic Preview */}
@@ -67,13 +81,13 @@ export default function ProjectCard({ project, onClick, isAdmin, onDelete }) {
           <div className="text-stone-300 text-[11px] font-medium tracking-wide">
             {project.period || '2025 - 2026'}
           </div>
-          <div className="text-white text-sm font-bold truncate drop-shadow-xs">
+          <div className="text-white text-sm font-bold truncate drop-shadow-sm">
             {project.subtitle || project.title}
           </div>
         </div>
       </div>
 
-      {/* Card Content */}
+      {/* Card Body Content */}
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
           {/* Title & View Icon */}

@@ -22,6 +22,11 @@ export const defaultProjects = [
     subtitle: '라이프스타일 리빙 브랜드 쇼핑몰 리뉴얼',
     category: '웹 서비스',
     thumbnail: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80'
+    ],
     summary: '여백과 따뜻한 텍스처를 살린 라이프스타일 리빙 브랜드 쇼핑몰 리뉴얼',
     description: '브랜드 감성을 극대화하기 위해 크림/샌드 톤 베이스 그리드를 구축하고, 복잡했던 주문 결제 플로우를 간소화하여 구매 전환 경험을 개선한 반응형 웹 디자인 프로젝트입니다.',
     period: '2025.10 - 2026.01',
@@ -39,6 +44,11 @@ export const defaultProjects = [
     subtitle: '자연 속 프라이빗 감성 스테이 예약 플랫폼',
     category: '랜딩페이지',
     thumbnail: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80'
+    ],
     summary: '자연 속 프라이빗 감성 스테이를 소개하는 몰입형 예약 랜딩페이지',
     description: '공간의 채광과 분위기를 시각적으로 전달할 수 있도록 와이드 비주얼 레이아웃과 감성적인 타이포그래피를 적용했습니다. 스크롤 인터랙션을 고려해 설계되었습니다.',
     period: '2025.07 - 2025.09',
@@ -56,6 +66,11 @@ export const defaultProjects = [
     subtitle: '마음 챙김과 데일리 습관 형성 모바일 앱',
     category: '모바일 UI',
     thumbnail: 'https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1200&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80'
+    ],
     summary: '시각적 피로도를 덜어주는 데일리 습관 형성 및 기록 모바일 앱',
     description: '사용자가 매일 편안하게 기록할 수 있도록 카드형 인터페이스와 직관적인 인터랙션을 디자인했으며 일관된 컴포넌트 시스템을 구축했습니다.',
     period: '2025.03 - 2025.06',
