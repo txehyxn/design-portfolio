@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-[#FAF8F5] text-stone-800 font-sans tracking-tight;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Warm Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F4EFEA;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D7CCC2;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #BFAFA2;
+  }
+}
+
+@layer utilities {
+  .glass-warm {
+    background: rgba(250, 248, 245, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .card-warm {
+    background: #FFFFFF;
+    box-shadow: 0 2px 12px -2px rgba(90, 75, 65, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+
+  .text-warm-gradient {
+    @apply bg-gradient-to-r from-stone-900 via-terracotta-700 to-amber-700 bg-clip-text text-transparent;
+  }
+}
